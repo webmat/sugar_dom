@@ -1,0 +1,29 @@
+{
+  "name": "sugar_dom",
+  "title": "sugar_dom",
+  "description": "JavaScript templating engines are so 2012. sugar_dom comes from the future!",
+  "version": "0.0.1",
+  "homepage": "https://github.com/webmat/sugar_dom",
+  "author": {
+    "name": "Mathieu Martin",
+    "email": "webmat@gmail.com",
+    "url": "http://programblings.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webmat/sugar_dom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webmat/sugar_dom/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/webmat/sugar_dom/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.5"
+  },
+  "keywords": []
+}
