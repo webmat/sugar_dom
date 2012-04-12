@@ -22,8 +22,8 @@
       "url": "https://github.com/webmat/sugar_dom/blob/master/LICENSE-MIT"
     }
   ],
-  "dependencies": {
-    "jquery": "~1.5"
-  },
-  "keywords": []
+  "keywords": ["templating", "javascript", "DOM", "createElement"],
+  "devDependencies":{
+    "grunt": "~0.3.6"
+  }
 }

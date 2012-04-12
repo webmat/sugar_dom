@@ -6,23 +6,10 @@
  * Licensed under the MIT license.
  */
 
-(function($) {
+(function(exports, document) {
 
-  // Collection method.
-  $.fn.awesome = function() {
-    return this.each(function() {
-      $(this).html('awesome');
-    });
+  exports.el = function(tag) {
+    return document.createElement(tag);
   };
 
-  // Static method.
-  $.awesome = function() {
-    return 'awesome';
-  };
-
-  // Custom selector.
-  $.expr[':'].awesome = function(elem) {
-    return elem.textContent.indexOf('awesome') >= 0;
-  };
-
-}(jQuery));
+}(typeof exports === 'object' && exports || this, document));
