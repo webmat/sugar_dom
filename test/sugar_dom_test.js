@@ -3,8 +3,10 @@
 /*global notDeepEqual:false, strictEqual:false, notStrictEqual:false, raises:false*/
 (function(el, document) {
 
-  test('is awesome', 1, function() {
-    ok(el('p').nodeName.match(/p/i), 'should be thoroughly awesome');
+  test('creating plain DOM elements', function() {
+    ok( el('p').nodeName.match(/p/i), 'can create classic elements' );
+    ok( el('div').nodeName.match(/div/i), 'can create classic elements' );
+    ok( el('video').nodeName.match(/video/i), 'can create HTML5 elements' );
   });
 
 }(el, document));
