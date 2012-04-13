@@ -8,21 +8,25 @@
 
 (function(exports, document) {
 
-  var addProperties = function(element, properties) {
-    var p, v;
-    for (p in properties) {
-      v = properties[p];
-      element.setAttribute(p, '' + v);
+  var setAttributes = function(element, attributes) {
+    var a, v;
+    for (a in attributes) {
+      v = attributes[a];
+      if (null === v) {
+        element.removeAttribute(a);
+      } else {
+        element.setAttribute(a, '' + v);
+      }
     }
   };
 
-  exports.el = function(tag, properties) {
+  exports.el = function(tag, attributes) {
     var element;
-    if (!properties) { properties = {}; }
+    if (!attributes) { attributes = {}; }
 
     element = document.createElement(tag);
 
-    addProperties(element, properties);
+    setAttributes(element, attributes);
 
     return element;
   };

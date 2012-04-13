@@ -10,6 +10,8 @@
     equal(dataAttribute.value, 'bob');
   });
 
-  // test("", function() {
-  // });
+  test("setting an attribute to null removes it from the element", function() {
+    var e = el('a', {href: null});
+    ok( !e.href );
+  });
 }(el, document));
