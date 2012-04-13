@@ -21,9 +21,12 @@
   };
 
   var appendChildren = function(element, children) {
-    var i;
-    for (i in children) {
-      element.appendChild(children[i]);
+    for (var i in children) {
+      var child = children[i];
+      if (typeof child === 'string') {
+        child = document.createTextNode(child);
+      }
+      element.appendChild(child);
     }
   };
 
