@@ -20,13 +20,21 @@
     }
   };
 
-  exports.el = function(tag, attributes) {
-    var element;
-    if (!attributes) { attributes = {}; }
+  var appendChildren = function(element, children) {
+    var i;
+    for (i in children) {
+      element.appendChild(children[i]);
+    }
+  };
 
-    element = document.createElement(tag);
+  exports.el = function(tag, attributes, children) {
+    if ( !children ) { children = []; }
+    if ( !attributes ) { attributes = {}; }
+
+    var element = document.createElement(tag);
 
     setAttributes(element, attributes);
+    appendChildren(element, children);
 
     return element;
   };
