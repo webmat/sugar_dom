@@ -21,6 +21,9 @@
   };
 
   var appendChildren = function(element, children) {
+    if (typeof children === 'string') {
+      children = [children];
+    }
     for (var i in children) {
       var child = children[i];
       if (typeof child === 'string') {
@@ -31,7 +34,8 @@
   };
 
   exports.el = function(tag, attributes, children) {
-    if ( attributes instanceof Array ) {
+    // only second parameter omitted
+    if ( attributes instanceof Array || typeof attributes === 'string' ) {
       children = attributes;
       attributes = {};
     }
