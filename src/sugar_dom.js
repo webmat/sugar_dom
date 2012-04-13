@@ -8,8 +8,23 @@
 
 (function(exports, document) {
 
-  exports.el = function(tag) {
-    return document.createElement(tag);
+  var addProperties = function(element, properties) {
+    var p, v;
+    for (p in properties) {
+      v = properties[p];
+      element.setAttribute(p, '' + v);
+    }
+  };
+
+  exports.el = function(tag, properties) {
+    var element;
+    if (!properties) { properties = {}; }
+
+    element = document.createElement(tag);
+
+    addProperties(element, properties);
+
+    return element;
   };
 
 }(typeof exports === 'object' && exports || this, document));
