@@ -6,9 +6,8 @@
   test("the third param is to create nested elements", function() {
     var e = el('p', {}, [el('a')]);
     ok( e.nodeName.match(/p/i) );
-    // equal( e.childNodes.length, 1, 'the parent element has a child');
-    // var first_child = e.childNodes[0];
-    // ok( first_child.nodeName.match(/a/i) );
+    equal( e.childNodes.length, 1, 'the parent element has a child');
+    ok( e.childNodes[0].nodeName.match(/a/i) );
   });
 
 }(el));
