@@ -28,6 +28,10 @@
   };
 
   exports.el = function(tag, attributes, children) {
+    if ( attributes instanceof Array ) {
+      children = attributes;
+      attributes = {};
+    }
     if ( !children ) { children = []; }
     if ( !attributes ) { attributes = {}; }
 
