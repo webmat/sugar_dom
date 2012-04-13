@@ -7,7 +7,9 @@
     var e = el('p', {}, [el('a')]);
     ok( e.nodeName.match(/p/i) );
     equal( e.childNodes.length, 1, 'the parent element has a child');
-    ok( e.childNodes[0].nodeName.match(/a/i) );
+    var child = e.childNodes[0];
+    ok( child.nodeName.match(/a/i) );
+    equal( child.parentNode, e );
   });
 
   test("if the second param is an array, it's assumed that no attributes were specified", function() {
