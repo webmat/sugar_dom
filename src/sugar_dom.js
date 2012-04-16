@@ -8,6 +8,18 @@
 
 (function(exports, document) {
 
+  // Can't only use split(/(#|\.)/) because IE (even 9) doesn't include the
+  // separators in the results.
+  var parseTag = function(rawTag) {
+    var parts = rawTag.split(/#|\./),
+        tag   = {tag: parts.shift()};
+
+    if (rawTag.match(/#/)) { tag.id = parts.shift(); }
+    if (parts.length) { tag['class'] = parts.join(' '); }
+
+    return tag;
+  };
+
   var setAttributes = function(element, attributes) {
     var a, v;
     for (a in attributes) {
@@ -49,5 +61,8 @@
 
     return element;
   };
+
+  // Commit heresy in the name of easier testing :-)
+  exports.el.parseTag = parseTag;
 
 }(typeof exports === 'object' && exports || this, document));
