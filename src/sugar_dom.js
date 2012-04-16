@@ -15,7 +15,7 @@
       if (null === v) {
         element.removeAttribute(a);
       } else {
-        element.setAttribute(a, '' + v);
+        element.setAttribute(a, String(v) );
       }
     }
   };
