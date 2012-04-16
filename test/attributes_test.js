@@ -14,6 +14,15 @@
     equal(e.className, 'my-class');
   });
 
+  test("attributes named differently by the DOM are not an issue as long as you use the HTML naming", function() {
+    var e;
+    e = el('p', {'class': 'my-class1 my-class2'});
+    equal(e.className, 'my-class1 my-class2');
+
+    e = el('label', {'for': 'my-input'});
+    equal(e.htmlFor, 'my-input');
+  });
+
   test("setting an attribute to null removes it from the element", function() {
     var e = el('a', {href: null});
     ok( !e.href );
