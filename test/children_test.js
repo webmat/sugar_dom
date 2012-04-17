@@ -21,13 +21,13 @@
   test("a string in the children creates a text node", function() {
     var e = el('p', ["my awesome paragraph"]);
     equal( e.childNodes.length, 1, 'the parent element has a child');
-    equal( e.childNodes[0].textContent, 'my awesome paragraph' );
+    equal( e.innerText, 'my awesome paragraph' );
   });
 
   test("a string can replace the children array, as a shortcut", function() {
     var e = el('p', "my awesome paragraph");
     equal( e.childNodes.length, 1, 'the parent element has a child');
-    equal( e.childNodes[0].textContent, 'my awesome paragraph' );
+    equal( e.innerText, 'my awesome paragraph' );
   });
 
 }(el));
