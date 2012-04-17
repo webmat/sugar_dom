@@ -4,8 +4,8 @@
 (function(el, document) {
 
   test("creating plain DOM elements", function() {
-    ok( el('p').nodeName.match(/p/i), 'can create classic elements' );
-    ok( el('div').nodeName.match(/div/i), 'can create classic elements' );
+    ok( el('p').nodeName.match(/p/i), 'can create an old school p element' );
+    ok( el('div').nodeName.match(/div/i), 'can create an old school div' );
     ok( el('video').nodeName.match(/video/i), 'can create HTML5 elements' );
   });
 
