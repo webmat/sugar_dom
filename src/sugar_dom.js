@@ -54,8 +54,20 @@
     if ( !children ) { children = []; }
     if ( !attributes ) { attributes = {}; }
 
-    var element = document.createElement(tag);
+    var parsedTag = parseTag(tag);
+    // Arbitrarily decided that the id in the tag name overrides the one in the
+    // attributes,  if both are set.
+    if (parsedTag.id) { attributes.id = parsedTag.id; }
+    // Having classes in both places keeps them all, though.
+    if (parsedTag['class']) {
+      if (attributes['class']) {
+        attributes['class'] = parsedTag['class'] + ' ' + attributes['class'];
+      } else {
+        attributes['class'] = parsedTag['class'];
+      }
+    }
 
+    var element = document.createElement(parsedTag.tag);
     setAttributes(element, attributes);
     appendChildren(element, children);
 
