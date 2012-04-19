@@ -20,14 +20,26 @@
     return tag;
   };
 
+  var inconsistentAttributes = {
+    'class': 'className',
+    'for': 'htmlFor'
+  };
+
   var setAttributes = function(element, attributes) {
-    var a, v;
+    var a, alt, value;
     for (a in attributes) {
-      v = attributes[a];
-      if (null === v) {
+      value = attributes[a];
+
+      if (null === value) {
         element.removeAttribute(a);
+
+      // What won't we do to please IE.
+      } else if (alt = inconsistentAttributes[a]) {
+        element[alt] = value;
+
+      // The normal scenario.
       } else {
-        element.setAttribute(a, String(v) );
+        element.setAttribute( a, String(value) );
       }
     }
   };
