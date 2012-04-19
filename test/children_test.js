@@ -2,6 +2,10 @@
 /*global start:false, stop:false ok:false, equal:false, notEqual:false, deepEqual:false*/
 /*global notDeepEqual:false, strictEqual:false, notStrictEqual:false, raises:false*/
 (function(el) {
+  var textFor = function(element) {
+    if (element.textContent) { return element.textContent; }
+    return element.innerText;
+  };
 
   test("the third param is to create nested elements", function() {
     var e = el('p', {}, [el('a')]);
@@ -21,13 +25,13 @@
   test("a string in the children creates a text node", function() {
     var e = el('p', ["my awesome paragraph"]);
     equal( e.childNodes.length, 1, 'the parent element has a child');
-    equal( e.innerText, 'my awesome paragraph' );
+    equal( textFor(e), 'my awesome paragraph' );
   });
 
   test("a string can replace the children array, as a shortcut", function() {
     var e = el('p', "my awesome paragraph");
     equal( e.childNodes.length, 1, 'the parent element has a child');
-    equal( e.innerText, 'my awesome paragraph' );
+    equal( textFor(e), 'my awesome paragraph' );
   });
 
 }(el));
