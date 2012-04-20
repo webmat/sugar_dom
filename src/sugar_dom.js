@@ -20,10 +20,11 @@
     return tag;
   };
 
-  var inconsistentAttributes = {
+  var directAssignment = {
     'class': 'className',
-    'for': 'htmlFor'
-  };
+    'for': 'htmlFor',
+    value: 'value',
+    defaultValue: 'defaultValue' };
 
   var setAttributes = function(element, attributes) {
     var a, alt, value;
@@ -33,8 +34,7 @@
       if (null === value) {
         element.removeAttribute(a);
 
-      // What won't we do to please IE.
-      } else if (alt = inconsistentAttributes[a]) {
+      } else if (alt = directAssignment[a]) {
         element[alt] = value;
 
       // The normal scenario.
