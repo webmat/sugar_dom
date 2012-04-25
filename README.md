@@ -159,7 +159,9 @@ via grunt. You'll find source code in the "src" subdirectory._
 
 ## Release History
 
-- 2012-04-25 - v0.0.1 - Initial release
+- 2012-04-25 - v0.0.2 - Empty children elements are skipped. Told you it wasn't
+                        ready for prime time :-)
+- 2012-04-25 - v0.0.1 - Initial release.
 
 ## License
 Copyright (c) 2012 Mathieu Martin

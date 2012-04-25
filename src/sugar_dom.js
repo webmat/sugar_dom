@@ -53,7 +53,7 @@
       if (typeof child === 'string') {
         child = document.createTextNode(child);
       }
-      element.appendChild(child);
+      if (child) { element.appendChild(child); }
     }
   };
 

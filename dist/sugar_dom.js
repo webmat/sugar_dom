@@ -1,4 +1,4 @@
-/*! sugar_dom - v0.0.1 - 2012-04-20
+/*! sugar_dom - v0.0.1 - 2012-04-25
 * https://github.com/webmat/sugar_dom
 * Copyright (c) 2012 Mathieu Martin; Licensed MIT */
 
@@ -16,11 +16,11 @@
     return tag;
   };
 
-  var directAssignment = {
-    'class': 'className',
-    'for': 'htmlFor',
-    value: 'value',
-    defaultValue: 'defaultValue' };
+  var directAssignment =
+    { 'class': 'className'
+    , 'for': 'htmlFor'
+    , value: 'value'
+    };
 
   var setAttributes = function(element, attributes) {
     var a, alt, value;
@@ -49,7 +49,7 @@
       if (typeof child === 'string') {
         child = document.createTextNode(child);
       }
-      element.appendChild(child);
+      if (child) { element.appendChild(child); }
     }
   };
 

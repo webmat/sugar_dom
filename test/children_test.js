@@ -34,4 +34,9 @@
     equal( textFor(e), 'my awesome paragraph' );
   });
 
+  test("empty children attributes are skipped", function(){
+    var e = el('div', [el('p'), null, undefined]);
+    equal( e.childNodes.length, 1, 'the parent element has exactly 1 child');
+  });
+
 }(el));
