@@ -129,6 +129,18 @@ sugar_dom is tested on Chrome, Firefox, Safari (desktop and mobile),
 Opera desktop, PhantomJS,
 and on the scourge or the Internet: IE 7+ (via IE 9's developer tools).
 
+## Disclaimer
+
+This software is probably not ready for you to user blindly, as the version
+number suggests. I'm presently using it for very simple templating on the
+future version of [SocialGrapes][socialgrapes], which is not out yet. FastMail
+may or may not be using a similar approach, but it's based on a different code
+base.
+
+[socialgrapes]: http://www.socialgrapes.com
+
+So use at your own risk, feedback is very welcome.
+
 ## Contributing
 
 Feel free to submit [issues][issues] and [pull requests][pull].
@@ -147,7 +159,7 @@ via grunt. You'll find source code in the "src" subdirectory._
 
 ## Release History
 
-_(Coming soon)_
+- 2012-04-25 - v0.0.1 - Initial release
 
 ## License
 Copyright (c) 2012 Mathieu Martin
