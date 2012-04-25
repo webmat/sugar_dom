@@ -126,7 +126,7 @@ el('form', {action: '/posts', _method: 'POST'}, [
 <h3 id="browser_support">Support</h3>
 
 sugar_dom is tested on Chrome, Firefox, Safari (desktop and mobile),
-Opera desktop, PhantomJS,
+Opera desktop, PhantomJS, Android's webkit (Android 2.3),
 and on the scourge or the Internet: IE 7+ (via IE 9's developer tools).
 
 ## Disclaimer
