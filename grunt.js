@@ -45,7 +45,8 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        browser: true
+        browser: true,
+        laxcomma: true
       },
       globals: {
         el: true,
