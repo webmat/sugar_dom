@@ -20,11 +20,11 @@
     return tag;
   };
 
-  var directAssignment = {
-    'class': 'className',
-    'for': 'htmlFor',
-    value: 'value',
-    defaultValue: 'defaultValue' };
+  var directAssignment =
+    { 'class': 'className'
+    , 'for': 'htmlFor'
+    , value: 'value'
+    };
 
   var setAttributes = function(element, attributes) {
     var a, alt, value;

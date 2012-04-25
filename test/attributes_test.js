@@ -29,9 +29,8 @@
   });
 
   test("input values are properly handled", function() {
-    var e = el('input', {value: 1, defaultValue: 42});
+    var e = el('input', {value: 1});
     equal( e.value, '1' );
-    equal( e.defaultValue, '42' );
   });
 
 }(el));
