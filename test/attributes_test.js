@@ -33,4 +33,9 @@
     equal( e.value, '1' );
   });
 
+  test("setting the onclick handler", function(){
+    var e = el('a', {onclick: "console.log('ohai');"});
+    ok( e.onclick.toString().match(/console.log\(.ohai.\);/) );
+  });
+
 }(el));
